@@ -1,13 +1,11 @@
-// React navigation imports
-import { View, Text, StyleSheet } from 'react-native';
-// Component imports
+import { StyleSheet, View, Text } from 'react-native';
 import AddMedicationBtn from '../components/ui/AddMedicationBtn';
 
-const Medications = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.containerTitle}>
-        <Text style={{ fontSize: 30 }}>Medications</Text>
+        <Text style={{ fontSize: 30 }}>Home</Text>
       </View>
       <AddMedicationBtn />
     </View>
@@ -25,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Medications;
+export default Home;

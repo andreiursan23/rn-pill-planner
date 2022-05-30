@@ -1,18 +1,17 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-
-import { Home } from './HomeScreen/Home';
-import { Medications } from './Medications';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from '../../screens/Home';
+import Medications from '../../screens/Medications';
 
 const BottomTabs = createBottomTabNavigator();
 
-export const HomeTabs = () => {
+const BottomNavigation = () => {
   return (
     <BottomTabs.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-
           switch (route.name) {
             case 'Home':
               iconName = focused ? 'ios-home' : 'ios-home-outline';
@@ -27,7 +26,11 @@ export const HomeTabs = () => {
         tabBarActiveTintColor: 'steelblue',
         tabBarInactiveTintColor: 'gray',
         tabBarHideOnKeyboard: true,
-        headerShown: false,
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: 'steelblue',
+        },
+        headerTitle: '',
       })}
     >
       <BottomTabs.Screen name="Home" component={Home} />
@@ -35,3 +38,5 @@ export const HomeTabs = () => {
     </BottomTabs.Navigator>
   );
 };
+
+export default BottomNavigation;

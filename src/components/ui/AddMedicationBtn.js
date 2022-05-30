@@ -1,13 +1,16 @@
 // React Native imports
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export const AddMedicationBtn = ({ navigation }) => {
+const AddMedicationBtn = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Add Medicine')}
+          onPress={() => navigation.navigate('Add Medicine Modal')}
         >
           <Text style={styles.addMed}>Add a med</Text>
         </TouchableOpacity>
@@ -18,10 +21,9 @@ export const AddMedicationBtn = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.2,
     paddingHorizontal: 10,
     paddingVertical: 10,
-    backgroundColor: 'white',
   },
   buttonContainer: {
     flex: 1,
@@ -47,3 +49,5 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
 });
+
+export default AddMedicationBtn;
